@@ -2,3 +2,5 @@ Deploy to Heroku, that is a remote server
 
 
 STS Eclipse to run it locally
+
+git push heroku [branch] pushes the branch to the heroku remote site
