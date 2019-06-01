@@ -3,41 +3,59 @@
 
     jQuery(main);
 
+    let tbody;
+    let template;
+
     function main() {
-        let h1 = jQuery('#title');
-        h1.css('color', 'red');
+        tbody = $('tbody');
+        template = $('.userTemplate');
 
-        let red = $('.red');
-        let green = $('.green');
-        let blue = $('.blue');
+        sendUserData();
 
-        red.css('color', 'white')
-          .css('background-color', 'red');
-        green.css('color', 'white')
-          .css('background-color', 'green');
-        blue.css('color', 'white')
-          .css('background-color', 'blue');
-    
-        let tr = $('.userTemplate');
+        // let promise = fetch('http://localhost:8080/api/user')
+        //                 .then((response)=>{
+        //                     return response.json();
+        //                 })
+        //                 .then(renderUsers);
+    }
 
-        let users = [
-            {username: 'mob'},
-            {username: 'bob'}
-        ];
+    async function sendUserData() {
+        const data = await fetch('http://localhost:8080/api/user');
+        const users = await data.json();
+        renderUsers(users);
+    }
 
-        let tbody = $('tbody');
-
-        
-
+    function renderUsers(users) {
         for(let i = 0; i < users.length; i++) {
             let user = users[i];
-            console.log(user);
-
-            let clone = tr.clone();
-            clone.find('.username').html(user.username);
+            let clone = template.clone();
+            clone.find('.username')
+                 .html(user.username);
+            clone.find('.password')
+                 .html(user.password);
+            clone.find('.firstName')
+                 .html(user.firstName);
+            clone.find('.lastName')
+                 .html(user.lastName);
             tbody.append(clone);
         }
     }
 
 })(); //for js and jquery barebones
 
+
+
+
+//let h1 = jQuery('#title');
+        // h1.css('color', 'red');
+
+        // let red = $('.red');
+        // let green = $('.green');
+        // let blue = $('.blue');
+
+        // red.css('color', 'white')
+        //   .css('background-color', 'red');
+        // green.css('color', 'white')
+        //   .css('background-color', 'green');
+        // blue.css('color', 'white')
+        //   .css('background-color', 'blue');
