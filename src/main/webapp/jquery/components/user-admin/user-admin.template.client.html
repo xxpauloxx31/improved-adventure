@@ -3,24 +3,32 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>COPAO DE GUARAVITA</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script
+			  src="http://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/d552797e3b.js"></script>
+	<script src="user-admin.controller.client.js"></script> <!--Controller means the role of the file and it's been executed in the client-->
 </head>
 <body>
 <div class="container">
-	<h1>User Admin</h1>
-	
+	<h1 id="title">User Admin</h1>
+	<h1 class="red">Red</h1>
+	<h1 class="red">Red</h1>
+	<h1 class="green">Green</h1>
+	<h1 class="green">Green</h1>
+	<h1 class="blue">Blue</h1>
 	<table class="table">
 		<thead>
 			<tr>
-				<th></th>
+				<th><i class="fas fa-id-card"></i></th>
 				<th>Username</th>
 				<th>Password</th>
 				<th>First Name</th>
 				<th>Last Name</th>
 			</tr>
 			<tr>
-				<th></th>
+				<th><i class="fas fa-id-card"></i></th>
 				<th><input class="form-control" placeholder="jdoe"/></th>
 				<th><input class="form-control" type="password"/></th>
 				<th><input class="form-control" placeholder="John"/></th>
@@ -29,25 +37,18 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
+			<tr class="userTemplate">
 				<td><i class="fas fa-id-card"></i></td>
-				<td>Paulo</td>
+				<td class="username">Paulo</td>
 				<td>*****</td>
 				<td>Paulo</td>
 				<td>Henrique</td>
-				<th><button class="btn btn-danger">Delete</button></th>
-			</tr>
-			<tr>
-				<td><i class="fas fa-id-card"></i></td>
-				<td>Bob</td>
-				<td>*****</td>
-				<td>Bob</td>
-				<td>Ross</td>
 				<th><button class="btn btn-danger">Delete</button></th>
 			</tr>
 		</tbody>
 		<tfoot></tfoot>
 	</table>
 	</div>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </body>
 </html>
